@@ -9,9 +9,10 @@ export default class CreateTransactionTable1590270273392
         columns: [
           {
             name: 'id',
-            type: 'varchar',
+            type: 'uuid',
             isPrimary: true,
             generationStrategy: 'uuid',
+            default: 'uuid_generate_v4()',
           },
           {
             name: 'title',
@@ -23,11 +24,11 @@ export default class CreateTransactionTable1590270273392
           },
           {
             name: 'value',
-            type: 'numeric',
+            type: 'numeric(18,2)',
           },
           {
             name: 'category_id',
-            type: 'varchar',
+            type: 'uuid',
           },
           {
             name: 'created_at',
@@ -45,6 +46,6 @@ export default class CreateTransactionTable1590270273392
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('gostack_desafio06_tests');
+    await queryRunner.dropTable('transactions');
   }
 }
