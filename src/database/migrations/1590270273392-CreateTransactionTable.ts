@@ -24,11 +24,14 @@ export default class CreateTransactionTable1590270273392
           },
           {
             name: 'value',
-            type: 'numeric(18,2)',
+            type: 'decimal',
+            scale: 2,
+            precision: 10,
           },
           {
             name: 'category_id',
             type: 'uuid',
+            isNullable: true,
           },
           {
             name: 'created_at',
